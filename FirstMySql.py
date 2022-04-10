@@ -6,6 +6,11 @@ dani = mysql.connector.connect(
     port= '3306',
     database= 'classicmodels'
 )
-sql_select_Query = "select custumerName from customer"
-cursor = dani.cursor()
-cursor.execute(sql_select_Query)
+
+mycursor = dani.cursor()
+sql_Query = "select customerName from customers"
+mycursor.execute(sql_Query)
+res = mycursor.fetchall()
+
+for i in res:
+    print(i)
