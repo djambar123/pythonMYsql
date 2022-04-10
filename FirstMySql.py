@@ -8,7 +8,7 @@ dani = mysql.connector.connect(
 )
 
 mycursor = dani.cursor()
-sql_Query = "select customerName from customers"
+sql_Query = "select customerName,customerNumber from customers ORDER BY customerName"
 mycursor.execute(sql_Query)
 res = mycursor.fetchall()
 
